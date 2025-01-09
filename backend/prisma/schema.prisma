@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ChatMessage {
+  id        Int      @id @default(autoincrement())
+  gameId    Int
+  userId    Int
+  message   String
+  createdAt DateTime @default(now())
+  Game      Game     @relation(fields: [gameId], references: [id])
+  User      User     @relation(fields: [userId], references: [id])
+}
+
+model Game {
+  id          Int           @id @default(autoincrement())
+  roomCode    String        @unique
+  hostId      Int
+  players     Json
+  roles       Json?
+  mode        String   @default("public")  //"public" or "private"
+  WordType    String
+  status      String
+  createdAt   DateTime      @default(now())
+  ChatMessage ChatMessage[]
+  User        User          @relation(fields: [hostId], references: [id])
+  GameHistory GameHistory[]
+}
+
+model GameHistory {
+  id     Int    @id @default(autoincrement())
+  gameId Int
+  userId Int
+  result String
+  Game   Game   @relation(fields: [gameId], references: [id])
+  User   User   @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id             Int           @id @default(autoincrement())
+  name           String
+  email          String        @unique
+  googleId       String        @unique
+  profilePicture String
+  ChatMessage    ChatMessage[]
+  Game           Game[]
+  GameHistory    GameHistory[]
+}
+
+model WordPair {
+  id       Int    @id @default(autoincrement())
+  wordType String
+  pair1    String
+  pair2    String
+}

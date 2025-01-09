@@ -1,0 +1,31 @@
+.range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: linear-gradient(to right, #30a9f5 0%, #30a9f5 var(--value), #d1c8c8 var(--value), #d1c8c8 100%);
+  border-radius: 5px;
+  outline: none;
+  transition: opacity 0.2s;
+}
+
+.range-input:hover {
+  opacity: 1;
+}
+
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #30a9f5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-input::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #30a9f5;
+  border-radius: 50%;
+  cursor: pointer;
+}

@@ -1,0 +1,44 @@
+.title-3d {
+  position: relative;
+  color: #111;
+  text-shadow: 1px 1px 2px #fff, 0 0 25px #fff, 0 0 5px #fff;
+}
+
+.title-3d span {
+  display: block;
+  transform: rotate(-3deg);
+  margin-bottom: -58px; /* Adjust this value to reduce the gap between the words */
+}
+
+.play-btn{
+  animation: scale 2s ease-in-out infinite ;
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out 0.3s both;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-in-out 0.5s both;
+}
+ */
