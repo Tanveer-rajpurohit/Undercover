@@ -18,6 +18,10 @@ const useActiveGameList = () => {
                 const data = await response.json();
                 if(!response.ok){
                     console.log(data);
+                    if(data.message === 'Not authorized, token failed'){
+                        localStorage.removeItem('authToken')
+                    }
+                   
                     if(data.message === 'User not found'){
                         localStorage.removeItem('authToken')
                     }

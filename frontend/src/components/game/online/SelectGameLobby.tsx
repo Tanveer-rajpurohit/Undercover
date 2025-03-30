@@ -64,7 +64,7 @@ export default function SelectGameLobby({ activeGames }: SelectGameLobbyProps) {
           </div>
           <h1 className="font-bold">Tanveer Sing.</h1>
         </div>
-        <div className="flex gap-2">
+        {/* <div className="flex gap-2">
           <div className="bg-white p-2 rounded-lg shadow-sm">
             <span className="text-pink-500">2 Win</span>
           </div>
@@ -72,7 +72,7 @@ export default function SelectGameLobby({ activeGames }: SelectGameLobbyProps) {
             <span className="text-yellow-500">👑</span>
             <span>1</span>
           </div>
-        </div>
+        </div> */}
       </header>
 
       {/* Game List */}
