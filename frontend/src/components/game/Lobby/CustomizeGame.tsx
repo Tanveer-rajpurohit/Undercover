@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Users } from "lucide-react";
+import {  Users } from "lucide-react";
 import "./CustomizeGame.css";
 import LobbyPlaySelect from "./LobbyPlaySelect";
-import { IoSettingsSharp } from "react-icons/io5";
 import SelectGroup from "./SelectGroup";
+import { BiHome } from "react-icons/bi";
 
 interface Users {
   id: string;
@@ -88,7 +88,11 @@ const CustomizeGame = () => {
         <div className="w-full flex items-center justify-end">
           <div className="p-2 rounded-full bg-[#F1548E] flex items-center justify-center">
             <div className="play-1 w-full h-full flex items-center justify-center">
-              <IoSettingsSharp className="fill-white w-6 h-6 cursor-pointer" />
+              <BiHome
+              onClick={()=>{
+                window.location.href = "/";
+              }}
+              className="fill-white w-6 h-6 cursor-pointer" />
             </div>
           </div>
         </div>

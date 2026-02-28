@@ -84,7 +84,7 @@ const SelectPlayerType: React.FC<OnlineLobbyProps> = ({ game }) => {
     }
   };
 
-  const totalPlayers = game ? JSON.parse(game.players).length : 0;
+  const totalPlayers = game ? JSON.parse(game.players).length : 4;
 
   return (
     <>

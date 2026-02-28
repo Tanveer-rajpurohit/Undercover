@@ -667,7 +667,6 @@ export const setupSocket = (server: any) => {
 
     socket.on('disconnect', () => {
       console.log('User disconnected:', socket.id);
-    
     });
   });
 

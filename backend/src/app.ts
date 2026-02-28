@@ -10,6 +10,8 @@ import room from './router/room';
 import "./config/googleAuth"; 
 dotenv.config();
 
+import wordPairs from './wordPairs';
+import prisma from './config/prismaClient';
 const app = express();
 const server = http.createServer(app);
 setupSocket(server);
@@ -18,7 +20,18 @@ app.use(cors());
 app.use(express.json());
 app.use(passport.initialize());
 
-
+//add words pairs to db
+// (async () => {
+//   try {
+//     const result = await prisma.wordPair.createMany({
+//       data: wordPairs,
+//       skipDuplicates: true,
+//     });
+//     console.log(`Seeded ${result.count} word pairs`);
+//   } catch (error) {
+//     console.error('Error seeding word pairs:', error);
+//   }
+// })();
 
 app.use('/auth',authRouter)
 app.use('/offline',offlinegame)
